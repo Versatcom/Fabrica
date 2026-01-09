@@ -1,1 +1,29 @@
+# Checklist de restricciones y validación
 
+## 1) Preparar checklist de restricciones
+- Lenguajes preferidos (backend, frontend, data/ML, scripting).
+- SLA/latencia objetivo (p95/p99, disponibilidad, RTO/RPO).
+- Presupuesto anual (CAPEX/OPEX, nube vs on‑prem).
+- Tamaño del equipo (número de personas por rol).
+- Skills del equipo (seniority, tecnologías dominadas, brechas).
+
+## 2) Levantamiento de datos
+- Entrevistas rápidas con líderes técnicos.
+- Cuestionario para líderes financieros.
+- Consolidación de respuestas y aclaración de dudas críticas.
+
+## 3) Matriz de restricciones
+Registrar cada restricción con:
+- Restricción.
+- Fuente (persona/área).
+- Fecha.
+- Nivel de certeza (alto/medio/bajo).
+
+## 4) Clasificación de restricciones
+- Duras: no negociables (impactan decisiones de arquitectura).
+- Negociables: pueden ajustarse con trade‑offs.
+
+## 5) Revisión con stakeholders
+- Validar exactitud y vigencia.
+- Documentar ajustes y acuerdos.
+- Alinear impacto en decisiones de arquitectura.
