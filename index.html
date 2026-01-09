@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fábrica | Dashboard en tiempo real</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Fábrica</p>
+      <h1>Dashboard operativo en tiempo real</h1>
+      <p class="subhead">
+        Seguimiento de stock, producción en curso, pedidos y reporte de costes por modelo.
+      </p>
+    </div>
+    <div class="timestamp">
+      Última actualización: <span id="last-updated">--:--:--</span>
+    </div>
+  </header>
+
+  <section class="filters">
+    <h2>Filtros</h2>
+    <div class="filters-grid">
+      <label>
+        Desde
+        <input type="date" id="filter-start" />
+      </label>
+      <label>
+        Hasta
+        <input type="date" id="filter-end" />
+      </label>
+      <label>
+        Cliente
+        <select id="filter-client"></select>
+      </label>
+      <label>
+        Modelo
+        <select id="filter-model"></select>
+      </label>
+      <button id="reset-filters" class="secondary">Limpiar filtros</button>
+    </div>
+  </section>
+
+  <section class="dashboard">
+    <h2>Visión general</h2>
+    <div class="card-grid">
+      <article class="card">
+        <p class="card-label">Stock disponible</p>
+        <p class="card-value" id="metric-stock">0</p>
+        <p class="card-meta" id="metric-stock-meta">Unidades listas para despacho</p>
+      </article>
+      <article class="card">
+        <p class="card-label">Producción en curso</p>
+        <p class="card-value" id="metric-production">0</p>
+        <p class="card-meta" id="metric-production-meta">Unidades en fabricación</p>
+      </article>
+      <article class="card">
+        <p class="card-label">Pedidos activos</p>
+        <p class="card-value" id="metric-orders">0</p>
+        <p class="card-meta" id="metric-orders-meta">Pedidos por atender</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="grid-two">
+    <div>
+      <h2>Producción en curso</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Modelo</th>
+              <th>Etapa</th>
+              <th>Unidades</th>
+              <th>Inicio</th>
+              <th>ETA</th>
+            </tr>
+          </thead>
+          <tbody id="production-table"></tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <h2>Pedidos recientes</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Cliente</th>
+              <th>Modelo</th>
+              <th>Cantidad</th>
+              <th>Fecha</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="orders-table"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="report">
+    <h2>Reporte de coste por modelo</h2>
+    <p class="subhead">
+      Costes agregados de materiales, mano de obra y tiempos según los filtros aplicados.
+    </p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Materiales</th>
+            <th>Mano de obra</th>
+            <th>Tiempos</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="cost-table"></tbody>
+        <tfoot>
+          <tr>
+            <th>Total</th>
+            <th id="total-materials">-</th>
+            <th id="total-labor">-</th>
+            <th id="total-time">-</th>
+            <th id="total-overall">-</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
